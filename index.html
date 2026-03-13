@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Connect - Find Your Dream Job Abroad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#1E40AF',
+                        accent: '#3B82F6',
+                        dark: '#0F172A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://image.qwenlm.ai/public_source/0455a1ff-4b54-4107-8332-cf307ae3213e/1109a7476-8309-4875-b482-d21453db7820.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .category-card:hover {
+            background-color: #EFF6FF;
+            border-color: #2563EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-2">
+                        <i class="fa-solid fa-globe text-primary text-3xl"></i>
+                        <span class="font-bold text-2xl text-dark">Global Connect</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#" class="text-gray-900 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Find Jobs</a>
+                        <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Companies</a>
+                        <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Visa Guide</a>
+                        <a href="#" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Resources</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 hidden md:block">Log in</a>
+                    <a href="#" class="bg-primary hover:bg-secondary text-white px-5 py-2.5 rounded-full font-medium transition duration-300 shadow-lg shadow-blue-500/30">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                Your Career Has <span class="text-blue-400">No Borders</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-10">
+                Discover thousands of international job opportunities. We connect talent with global employers, handling the complexities so you can focus on your future.
+            </p>
+
+            <!-- Search Box -->
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl p-4 shadow-2xl flex flex-col md:flex-row gap-4">
+                <div class="flex-1 relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm" placeholder="Job title, keywords, or company">
+                </div>
+                <div class="flex-1 relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-location-dot text-gray-400"></i>
+                    </div>
+                    <select class="block w-full pl-10 pr-10 py-4 border border-gray-300 rounded-lg leading-5 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm appearance-none">
+                        <option>Any Location</option>
+                        <option>United States</option>
+                        <option>United Kingdom</option>
+                        <option>Germany</option>
+                        <option>Canada</option>
+                        <option>Australia</option>
+                        <option>UAE</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-chevron-down text-gray-400 text-xs"></i>
+                    </div>
+                </div>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                    Search Jobs
+                </button>
+            </div>
+
+            <!-- Popular Searches -->
+            <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm text-gray-300">
+                <span>Popular:</span>
+                <a href="#" class="hover:text-white underline">Software Engineer</a>
+                <a href="#" class="hover:text-white underline">Nurse</a>
+                <a href="#" class="hover:text-white underline">Project Manager</a>
+                <a href="#" class="hover:text-white underline">Data Scientist</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="bg-white py-12 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">15k+</div>
+                    <div class="text-gray-500">Active Jobs</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                    <div class="text-gray-500">Countries</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">2k+</div>
+                    <div class="text-gray-500">Partner Companies</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">100%</div>
+                    <div class="text-gray-500">Visa Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Browse by Category</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Find the perfect role that matches your skills and experience level.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Category 1 -->
+                <div class="category-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer text-center group">
+                    <div class="w-14 h-14 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                        <i class="fa-solid fa-code text-primary text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">IT & Software</h3>
+                    <p class="text-sm text-gray-500 mt-1">1,240 Jobs</p>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="category-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer text-center group">
+                    <div class="w-14 h-14 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i class="fa-solid fa-stethoscope text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Healthcare</h3>
+                    <p class="text-sm text-gray-500 mt-1">850 Jobs</p>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="category-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer text-center group">
+                    <div class="w-14 h-14 mx-auto bg-purple-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
+                        <i class="fa-solid fa-chart-line text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Finance</h3>
+                    <p class="text-sm text-gray-500 mt-1">620 Jobs</p>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="category-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer text-center group">
+                    <div class="w-14 h-14 mx-auto bg-orange-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-100 transition-colors">
+                        <i class="fa-solid fa-helmet-safety text-orange-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Engineering</h3>
+                    <p class="text-sm text-gray-500 mt-1">930 Jobs</p>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="category-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer text-center group">
+                    <div class="w-14 h-14 mx-auto bg-red-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-100 transition-colors">
+                        <i class="fa-solid fa-pen-nib text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Marketing</h3>
+                    <p class="text-sm text-gray-500 mt-1">410 Jobs</p>
+                </div>
+
+                <!-- Category 6 -->
+                <div class="category-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer text-center group">
+                    <div class="w-14 h-14 mx-auto bg-teal-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-teal-100 transition-colors">
+                        <i class="fa-solid fa-graduation-cap text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Education</h3>
+                    <p class="text-sm text-gray-500 mt-1">320 Jobs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-dark mb-2">Featured Opportunities</h2>
+                    <p class="text-gray-500">Hand-picked jobs with visa sponsorship available.</p>
+                </div>
+                <a href="#" class="text-primary font-semibold hover:text-secondary flex items-center gap-2">
+                    View All Jobs <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Job Card 1 -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        Visa Sponsorship
+                    </div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-brands fa-google text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Senior Software Engineer</h3>
+                            <p class="text-gray-500 text-sm">Google Inc.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Full Time</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Remote</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">$120k - $160k</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i> USA, California
+                        </div>
+                        <span class="text-gray-400 text-xs">2 days ago</span>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        Visa Sponsorship
+                    </div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-hospital text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Registered Nurse</h3>
+                            <p class="text-gray-500 text-sm">NHS Trust</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Full Time</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">On-site</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">£35k - £45k</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i> UK, London
+                        </div>
+                        <span class="text-gray-400 text-xs">5 hours ago</span>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        Visa Sponsorship
+                    </div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-building text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Project Manager</h3>
+                            <p class="text-gray-500 text-sm">Siemens</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Contract</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Hybrid</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">€60k - €75k</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i> Germany, Munich
+                        </div>
+                        <span class="text-gray-400 text-xs">1 week ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-dark text-white relative overflow-hidden">
+        <!-- Decorative circles -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-blue-600 opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-600 opacity-10 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Move Abroad with Global Connect?</h2>
+                    <p class="text-gray-400 mb-8 text-lg">We don't just list jobs; we guide you through the entire relocation process, ensuring a smooth transition to your new life.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-900/50 flex items-center justify-center flex-shrink-0 border border-blue-800">
+                                <i class="fa-solid fa-file-contract text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Visa & Legal Support</h4>
+                                <p class="text-gray-400 text-sm mt-1">Expert guidance on work permits and legal requirements for over 50 countries.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-900/50 flex items-center justify-center flex-shrink-0 border border-blue-800">
+                                <i class="fa-solid fa-house-chimney text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Relocation Assistance</h4>
+                                <p class="text-gray-400 text-sm mt-1">Help finding accommodation, setting up bank accounts, and understanding local culture.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-900/50 flex items-center justify-center flex-shrink-0 border border-blue-800">
+                                <i class="fa-solid fa-shield-halved text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Verified Employers</h4>
+                                <p class="text-gray-400 text-sm mt-1">All our partner companies are vetted to ensure fair wages and safe working conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" class="rounded-2xl shadow-2xl border-4 border-gray-800">
+                    <div class="absolute -bottom-6 -left-6 bg-white text-dark p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="flex -space-x-2">
+                                <img class="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                                <img class="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                <img class="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+                            </div>
+                            <span class="font-bold text-sm">+2k Hired</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Professionals found jobs this month alone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-4">Get Job Alerts Delivered</h2>
+            <p class="text-gray-600 mb-8">Subscribe to our newsletter and get the latest international job opportunities sent straight to your inbox weekly.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                <button type="button" class="bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-blue-500/30">Subscribe</button>
+            </form>
+            <p class="text-xs text-gray-400 mt-4">No spam, unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-globe text-primary text-2xl"></i>
+                        <span class="font-bold text-xl text-dark">Global Connect</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 max-w-xs">
+                        Connecting talent with opportunities worldwide. Your gateway to a global career.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-dark mb-4">For Candidates</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-primary">Browse Jobs</a></li>
+                        <li><a href="#" class="hover:text-primary">Browse Categories</a></li>
+                        <li><a href="#" class="hover:text-primary">Candidate Dashboard</a></li>
+                        <li><a href="#" class="hover:text-primary">Job Alerts</a></li>
+                        <li><a href="#" class="hover:text-primary">My Bookmarks</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-primary">Post a Job</a></li>
+                        <li><a href="#" class="hover:text-primary">Browse Candidates</a></li>
+                        <li><a href="#" class="hover:text-primary">Employer Dashboard</a></li>
+                        <li><a href="#" class="hover:text-primary">Pricing Plans</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-primary">Career Advice</a></li>
+                        <li><a href="#" class="hover:text-primary">Visa Guide</a></li>
+                        <li><a href="#" class="hover:text-primary">Salary Calculator</a></li>
+                        <li><a href="#" class="hover:text-primary">Help Center</a></li>
+                        <li><a href="#" class="hover:text-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2023 Global Connect. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-dark">Privacy Policy</a>
+                    <a href="#" class="hover:text-dark">Terms of Service</a>
+                    <a href="#" class="hover:text-dark">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interaction for the search button to show it works
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Searching...';
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                alert('Search functionality would connect to the backend API here!');
+            }, 1000);
+        });
+
+        // Newsletter subscription simulation
+        document.querySelector('form button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const input = this.previousElementSibling;
+            if(input.value) {
+                this.innerHTML = '<i class="fa-solid fa-check"></i> Subscribed!';
+                this.classList.remove('bg-primary', 'hover:bg-secondary');
+                this.classList.add('bg-green-600', 'hover:bg-green-700');
+                input.value = '';
+                setTimeout(() => {
+                    this.innerHTML = 'Subscribe';
+                    this.classList.add('bg-primary', 'hover:bg-secondary');
+                    this.classList.remove('bg-green-600', 'hover:bg-green-700');
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
+
