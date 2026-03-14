@@ -93,7 +93,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- ✅ Back to Home Button -->
+    <!-- Back to Home Button -->
     <button onclick="scrollToHome()" id="backToHome" title="Go to top">
         <i class="fa-solid fa-house text-xl"></i>
     </button>
@@ -240,7 +240,8 @@
                             <a href="https://www.facebook.com/jay.mwas.7" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
                                 <i class="fa-brands fa-facebook-f text-xl"></i>
                             </a>
-                            <a href="mailto:princemkenya143@gmail.com" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary">
+                            <!-- ✅ Email Icon Only (No Email Shown) -->
+                            <a href="mailto:princemkenya143@gmail.com?subject=Business Inquiry" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary">
                                 <i class="fa-solid fa-envelope text-xl"></i>
                             </a>
                         </div>
@@ -307,7 +308,6 @@
                     </div>
                     <div class="flex justify-between pt-4 border-t">
                         <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Serbia 🇪🇺</span>
-                        <!-- ✅ Apply Now Button - Scrolls to Submit CV -->
                         <a href="#submit-cv" onclick="scrollToSubmit()" class="text-purple-500 text-xs font-bold hover:text-purple-700">Apply Now →</a>
                     </div>
                 </div>
@@ -332,7 +332,6 @@
                     </div>
                     <div class="flex justify-between pt-4 border-t">
                         <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Serbia 🇪🇺</span>
-                        <!-- ✅ Apply Now Button -->
                         <a href="#submit-cv" onclick="scrollToSubmit()" class="text-purple-500 text-xs font-bold hover:text-purple-700">Apply Now →</a>
                     </div>
                 </div>
@@ -357,7 +356,6 @@
                     </div>
                     <div class="flex justify-between pt-4 border-t">
                         <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Romania 🇪🇺</span>
-                        <!-- ✅ Apply Now Button -->
                         <a href="#submit-cv" onclick="scrollToSubmit()" class="text-indigo-500 text-xs font-bold hover:text-indigo-700">Apply Now →</a>
                     </div>
                 </div>
@@ -382,7 +380,6 @@
                     </div>
                     <div class="flex justify-between pt-4 border-t">
                         <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> UAE</span>
-                        <!-- ✅ Apply Now Button -->
                         <a href="#submit-cv" onclick="scrollToSubmit()" class="text-red-500 text-xs font-bold hover:text-red-700">Apply Now →</a>
                     </div>
                 </div>
@@ -407,7 +404,6 @@
                     </div>
                     <div class="flex justify-between pt-4 border-t">
                         <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Qatar</span>
-                        <!-- ✅ Apply Now Button -->
                         <a href="#submit-cv" onclick="scrollToSubmit()" class="text-gray-500 text-xs font-bold hover:text-gray-700">Apply Now →</a>
                     </div>
                 </div>
@@ -432,7 +428,6 @@
                     </div>
                     <div class="flex justify-between pt-4 border-t">
                         <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Qatar</span>
-                        <!-- ✅ Apply Now Button -->
                         <a href="#submit-cv" onclick="scrollToSubmit()" class="text-blue-500 text-xs font-bold hover:text-blue-700">Apply Now →</a>
                     </div>
                 </div>
@@ -441,27 +436,32 @@
         </div>
     </section>
 
-    <!-- Submit CV Section -->
+    <!-- ✅ Submit CV Section - EMAIL HIDDEN (Icon Only) -->
     <section id="submit-cv" class="py-20 bg-blue-50">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-dark mb-4">Submit Your CV</h2>
-            <p class="text-gray-600 mb-8">Send your CV directly to our recruitment team via email.</p>
+            <p class="text-gray-600 mb-8">Send your CV directly to our recruitment team. Click the button below to open your email app.</p>
             
             <div class="bg-white p-8 rounded-2xl shadow-lg">
                 <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                     <i class="fa-solid fa-envelope text-3xl text-white"></i>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Send via Email</h3>
-                <p class="text-gray-600 mb-6">princemkenya143@gmail.com</p>
+                <h3 class="text-2xl font-bold mb-4">Send Your Application</h3>
+                <p class="text-gray-600 mb-6">Click the button below to compose an email with your CV attached</p>
                 
-                <a href="mailto:princemkenya143@gmail.com?subject=Job Application&body=Dear Global Connect Team,%0D%0A%0D%0AI am interested in applying for a position. Please find my details below:%0D%0A%0D%0AName:%0D%0APhone:%0D%0APosition Applied For:%0D%0A%0D%0AI have attached my CV for your review.%0D%0A%0D%0AThank you,%0D%0A" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition text-lg">
-                    <i class="fa-solid fa-envelope mr-2"></i>Open Email & Send CV
+                <!-- ✅ Email Button (No Email Address Shown) -->
+                <a href="mailto:princemkenya143@gmail.com?subject=Job Application&body=Dear Global Connect Team,%0D%0A%0D%0AI am interested in applying for a position. Please find my details below:%0D%0A%0D%0AName:%0D%0APhone:%0D%0APosition Applied For:%0D%0A%0D%0AI have attached my CV for your review.%0D%0A%0D%0AThank you,%0D%0A" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition text-lg shadow-lg">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>Send CV via Email
                 </a>
                 
+                <p class="text-sm text-gray-500 mt-4">
+                    <i class="fa-solid fa-info-circle mr-1"></i>Your email app will open automatically
+                </p>
+                
                 <div class="border-t pt-6 mt-6">
-                    <p class="mb-4 font-bold">Or via WhatsApp:</p>
-                    <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I%20would%20like%20to%20submit%20my%20CV%20for%20job%20opportunities" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full">
-                        <i class="fa-brands fa-whatsapp mr-2"></i>+254 713 670 248
+                    <p class="mb-4 font-bold">Or apply via WhatsApp:</p>
+                    <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I%20would%20like%20to%20submit%20my%20CV%20for%20job%20opportunities" target="_blank" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full">
+                        <i class="fa-brands fa-whatsapp mr-2"></i>Send via WhatsApp
                     </a>
                 </div>
             </div>
@@ -505,6 +505,10 @@
                         <a href="https://wa.me/254713670248" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-green-500 hover:text-white">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
+                        <!-- ✅ Email Icon Only (No Email Shown) -->
+                        <a href="mailto:princemkenya143@gmail.com?subject=Inquiry" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
                 <div>
@@ -520,7 +524,7 @@
                     <h4 class="font-bold mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="tel:+254713670248" class="hover:text-primary font-bold">+254 713 670 248</a></li>
-                        <li><a href="mailto:princemkenya143@gmail.com" class="hover:text-primary">princemkenya143@gmail.com</a></li>
+                        <li><a href="#submit-cv" class="hover:text-primary"><i class="fa-solid fa-envelope mr-1"></i>Send Email</a></li>
                     </ul>
                 </div>
             </div>
@@ -537,10 +541,8 @@
 
     <!-- JavaScript -->
     <script>
-        // ✅ Scroll to Home Function
         function scrollToHome() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            // Close mobile menu if open
             var menu = document.getElementById('mobileMenu');
             var icon = document.getElementById('menuIcon');
             menu.classList.remove('active');
@@ -548,13 +550,11 @@
             icon.classList.add('fa-bars');
         }
 
-        // ✅ Scroll to Submit CV Function
         function scrollToSubmit() {
             var submitSection = document.getElementById('submit-cv');
             submitSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Mobile Menu Toggle
         function toggleMenu() {
             var menu = document.getElementById('mobileMenu');
             var icon = document.getElementById('menuIcon');
@@ -570,12 +570,10 @@
             }
         }
 
-        // Add click event listener to menu button
         document.getElementById('menuBtn').addEventListener('click', function() {
             toggleMenu();
         });
 
-        // Show/Hide Back to Home Button on Scroll
         window.onscroll = function() {
             var btn = document.getElementById('backToHome');
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -585,7 +583,6 @@
             }
         };
 
-        // Search Function
         function searchJobs() {
             var searchTerm = document.getElementById('jobTitle').value.toLowerCase();
             var locationFilter = document.getElementById('location').value;
@@ -628,7 +625,6 @@
             searchJobs();
         }
 
-        // Enter key search
         document.getElementById('jobTitle').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 searchJobs();
