@@ -89,6 +89,22 @@
         .whatsapp-float {
             z-index: 99;
         }
+        
+        /* Logo Styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -102,11 +118,12 @@
     <nav class="bg-white shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-globe text-primary text-3xl"></i>
-                    <span class="font-bold text-2xl text-dark">Global Connect</span>
-                </div>
+                <!-- ✅ Logo - Clickable to Home -->
+                <a href="#home" onclick="scrollToHome(); return false;" class="logo-container">
+                    <!-- Replace with your logo -->
+                    <img src="logo.png" alt="Global Connect Logo" class="logo-img">
+                    <span class="font-bold text-2xl text-dark hidden sm:block">Global Connect</span>
+                </a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
@@ -240,7 +257,6 @@
                             <a href="https://www.facebook.com/jay.mwas.7" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
                                 <i class="fa-brands fa-facebook-f text-xl"></i>
                             </a>
-                            <!-- ✅ Email Icon Only (No Email Shown) -->
                             <a href="mailto:princemkenya143@gmail.com?subject=Business Inquiry" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary">
                                 <i class="fa-solid fa-envelope text-xl"></i>
                             </a>
@@ -436,7 +452,7 @@
         </div>
     </section>
 
-    <!-- ✅ Submit CV Section - EMAIL HIDDEN (Icon Only) -->
+    <!-- Submit CV Section -->
     <section id="submit-cv" class="py-20 bg-blue-50">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-dark mb-4">Submit Your CV</h2>
@@ -449,7 +465,6 @@
                 <h3 class="text-2xl font-bold mb-4">Send Your Application</h3>
                 <p class="text-gray-600 mb-6">Click the button below to compose an email with your CV attached</p>
                 
-                <!-- ✅ Email Button (No Email Address Shown) -->
                 <a href="mailto:princemkenya143@gmail.com?subject=Job Application&body=Dear Global Connect Team,%0D%0A%0D%0AI am interested in applying for a position. Please find my details below:%0D%0A%0D%0AName:%0D%0APhone:%0D%0APosition Applied For:%0D%0A%0D%0AI have attached my CV for your review.%0D%0A%0D%0AThank you,%0D%0A" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition text-lg shadow-lg">
                     <i class="fa-solid fa-paper-plane mr-2"></i>Send CV via Email
                 </a>
@@ -494,7 +509,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-2">
                     <div class="flex items-center gap-2 mb-4">
-                        <i class="fa-solid fa-globe text-primary text-2xl"></i>
+                        <img src="logo.png" alt="Global Connect" class="h-10">
                         <span class="font-bold text-xl">Global Connect</span>
                     </div>
                     <p class="text-sm text-gray-500 mb-4">Connecting African talent with global opportunities.</p>
@@ -505,7 +520,6 @@
                         <a href="https://wa.me/254713670248" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-green-500 hover:text-white">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <!-- ✅ Email Icon Only (No Email Shown) -->
                         <a href="mailto:princemkenya143@gmail.com?subject=Inquiry" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
