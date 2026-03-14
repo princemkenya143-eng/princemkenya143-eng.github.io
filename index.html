@@ -28,6 +28,7 @@
             background-size: cover;
             background-position: center;
         }
+        .job-card { transition: all 0.3s; }
         .job-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
         .category-card:hover { background-color: #EFF6FF; border-color: #2563EB; }
         .search-results { display: none; }
@@ -35,6 +36,7 @@
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-bounce { animation: bounce 2s infinite; }
         .phone-number { font-size: 1.5rem; font-weight: 700; color: #2563EB; }
+        .job-card.hidden-job { display: none; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -118,7 +120,9 @@
                 <h2 class="text-3xl font-bold text-dark mb-2">Search Results</h2>
                 <p id="resultsCount" class="text-gray-500">Found 0 jobs</p>
             </div>
-            <div id="jobsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <div id="jobsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Jobs will be filtered here -->
+            </div>
         </div>
     </div>
 
@@ -135,7 +139,7 @@
         </div>
     </section>
 
-    <!-- ✅ CEO SECTION - USING ONLINE IMAGE -->
+    <!-- CEO SECTION -->
     <section id="ceo" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -146,7 +150,6 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
                     <div class="inline-block p-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl mb-6">
-                        <!-- ✅ USING ONLINE IMAGE URL -->
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80" 
                              alt="Josephat Mwangi W - CEO" 
                              class="rounded-xl w-72 h-72 object-cover shadow-2xl">
@@ -212,9 +215,9 @@
                     <p class="text-gray-500">Urgent hiring with visa sponsorship available.</p>
                 </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="allJobs">
                 <!-- Job 1 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="UAE" data-title="Security Guard">
                     <div class="absolute top-0 right-0 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-bl-lg">URGENT</div>
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -241,7 +244,7 @@
                 </div>
 
                 <!-- Job 2 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Nurse">
                     <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Visa Sponsorship</div>
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -268,7 +271,7 @@
                 </div>
 
                 <!-- Job 3 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Kitchen Helper">
                     <div class="absolute top-0 right-0 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Qatar Airways</div>
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -295,7 +298,7 @@
                 </div>
 
                 <!-- Job 4 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Kenya" data-title="Security Guard">
                     <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">900+ Positions</div>
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -322,7 +325,7 @@
                 </div>
 
                 <!-- Job 5 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Cleaner">
                     <div class="absolute top-0 right-0 bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-bl-lg">NO INTERVIEW</div>
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -349,7 +352,7 @@
                 </div>
 
                 <!-- Job 6 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group">
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="UAE" data-title="Helper">
                     <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Visa Sponsorship</div>
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -508,15 +511,67 @@
 
     <!-- JavaScript -->
     <script>
+        // Working Search Functionality
         function searchJobs() {
-            document.getElementById('searchResults').classList.add('active');
-            document.getElementById('resultsCount').textContent = 'Found 0 jobs';
-            document.getElementById('jobsContainer').innerHTML = '<div class="col-span-full text-center py-12"><p class="text-gray-500">Visit our office or call us for current opportunities</p></div>';
+            const searchTerm = document.getElementById('jobTitle').value.toLowerCase();
+            const locationFilter = document.getElementById('location').value;
+            const allJobs = document.querySelectorAll('#allJobs .job-card');
+            const searchResults = document.getElementById('searchResults');
+            const resultsCount = document.getElementById('resultsCount');
+            const jobsContainer = document.getElementById('jobsContainer');
+            
+            let visibleCount = 0;
+            
+            // Clear previous results
+            jobsContainer.innerHTML = '';
+            
+            // Filter jobs
+            allJobs.forEach(job => {
+                const jobTitle = job.getAttribute('data-title').toLowerCase();
+                const jobLocation = job.getAttribute('data-location');
+                
+                const matchesSearch = jobTitle.includes(searchTerm) || 
+                                    job.querySelector('h3').textContent.toLowerCase().includes(searchTerm);
+                const matchesLocation = locationFilter === '' || jobLocation === locationFilter;
+                
+                if (matchesSearch && matchesLocation) {
+                    // Clone the job card and show it in results
+                    const clone = job.cloneNode(true);
+                    clone.classList.remove('hidden-job');
+                    jobsContainer.appendChild(clone);
+                    visibleCount++;
+                }
+            });
+            
+            // Update count
+            resultsCount.textContent = `Found ${visibleCount} job${visibleCount !== 1 ? 's' : ''}`;
+            
+            // Show results section
+            if (visibleCount > 0) {
+                searchResults.classList.add('active');
+                searchResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                // Show no results message
+                jobsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fa-solid fa-inbox text-gray-300 text-6xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-600">No jobs found</h3>
+                        <p class="text-gray-500 mt-2">Try adjusting your search criteria or contact us directly</p>
+                        <a href="https://wa.me/254713670248" target="_blank" class="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                            <i class="fa-brands fa-whatsapp mr-2"></i>Chat on WhatsApp
+                        </a>
+                    </div>
+                `;
+                searchResults.classList.add('active');
+                searchResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
+        
         function quickSearch(keyword) {
             document.getElementById('jobTitle').value = keyword;
             searchJobs();
         }
+        
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jobTitle').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') searchJobs();
