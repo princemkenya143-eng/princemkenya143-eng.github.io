@@ -35,6 +35,8 @@
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-bounce { animation: bounce 2s infinite; }
         .phone-number { font-size: 1.5rem; font-weight: 700; color: #2563EB; }
+        .success-message { display: none; }
+        .success-message.show { display: block; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -135,7 +137,7 @@
         </div>
     </section>
 
-    <!-- ✅ CEO SECTION - NEW! -->
+    <!-- CEO SECTION -->
     <section id="ceo" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -146,7 +148,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
                     <div class="inline-block p-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80" alt="Josephat Mwangi W - CEO" class="rounded-xl w-72 h-72 object-cover shadow-2xl">
+                        <img src="ceo.jpg" alt="Josephat Mwangi W - CEO" class="rounded-xl w-72 h-72 object-cover shadow-2xl">
                     </div>
                 </div>
                 
@@ -382,7 +384,7 @@
         </div>
     </section>
 
-    <!-- CV SUBMISSION FORM SECTION -->
+    <!-- ✅ CV SUBMISSION FORM - NETLIFY (ONE FILE ONLY!) -->
     <section id="submit-cv" class="py-20 bg-blue-50">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -390,8 +392,32 @@
                 <p class="text-gray-600">Upload your CV and we'll contact you when matching positions become available.</p>
             </div>
             
+            <!-- Success Message (Shows after submission) -->
+            <div id="successMessage" class="success-message bg-green-50 border-2 border-green-500 rounded-2xl p-8 text-center mb-8">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-check text-4xl text-green-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-green-700 mb-2">Application Submitted Successfully!</h3>
+                <p class="text-gray-700 mb-4">Thank you for your application. We've received your CV and will review it shortly. If your profile matches our requirements, we'll contact you within 48 hours.</p>
+                <p class="text-sm text-gray-600"><i class="fa-solid fa-phone mr-2"></i>For urgent inquiries: +254 713 670 248</p>
+            </div>
+            
             <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <form action="https://formspree.io/f/mzdjvgnr" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <!-- NETLIFY FORM - Sends directly to your email! -->
+                <form name="cv-submission" 
+                      method="POST" 
+                      enctype="multipart/form-data" 
+                      data-netlify="true" 
+                      data-netlify-honeypot="bot-field"
+                      onsubmit="showSuccess()"
+                      class="space-y-6">
+                    
+                    <!-- Hidden fields for Netlify -->
+                    <input type="hidden" name="form-name" value="cv-submission">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </p>
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Full Name *</label>
@@ -427,7 +453,7 @@
                         <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition">
                             <i class="fa-solid fa-cloud-arrow-up text-4xl text-gray-400 mb-3"></i>
                             <p class="text-gray-600 mb-2">Drag and drop your CV here, or click to browse</p>
-                            <p class="text-xs text-gray-500">Accepted formats: PDF, DOC, DOCX (Max 5MB)</p>
+                            <p class="text-xs text-gray-500">Accepted formats: PDF, DOC, DOCX (Max 10MB)</p>
                             <input type="file" name="cv" accept=".pdf,.doc,.docx" required class="mt-4 w-full">
                         </div>
                     </div>
@@ -494,7 +520,8 @@
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-dark mb-4">Get Job Alerts Delivered</h2>
             <p class="text-gray-600 mb-8">Subscribe to our newsletter and get the latest international job opportunities sent straight to your inbox weekly.</p>
-            <form action="https://formspree.io/f/mzdjvgnr" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <form name="newsletter" method="POST" data-netlify="true" onsubmit="showSuccess()" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="hidden" name="form-name" value="newsletter">
                 <input type="email" name="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" required>
                 <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-blue-500/30">Subscribe</button>
             </form>
@@ -555,6 +582,16 @@
 
     <!-- JavaScript -->
     <script>
+        // Show success message after form submission
+        function showSuccess() {
+            document.getElementById('successMessage').classList.add('show');
+            document.querySelector('form').reset();
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+            }, 10000);
+        }
+
+        // Search functionality
         function searchJobs() {
             document.getElementById('searchResults').classList.add('active');
             document.getElementById('resultsCount').textContent = 'Found 0 jobs';
