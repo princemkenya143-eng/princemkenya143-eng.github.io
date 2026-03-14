@@ -90,11 +90,11 @@
             z-index: 99;
         }
         
-        /* Logo Styling */
+        /* Logo Styling - BIGGER */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -102,8 +102,16 @@
             transform: scale(1.05);
         }
         .logo-img {
-            height: 50px;
+            height: 70px; /* Increased from 50px */
             width: auto;
+        }
+        .logo-text {
+            font-size: 2rem; /* Larger text */
+            font-weight: 800; /* Extra bold */
+            background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
@@ -118,9 +126,10 @@
     <nav class="bg-white shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo - Clickable to Home -->
+                <!-- ✅ Logo with BIGGER size and Global Connect text -->
                 <a href="#home" onclick="scrollToHome(); return false;" class="logo-container">
                     <img src="https://i.ibb.co/KQkpN7m/logo.png" alt="Global Connect Logo" class="logo-img">
+                    <span class="logo-text hidden md:block">Global Connect</span>
                 </a>
                 
                 <!-- Desktop Menu -->
@@ -160,9 +169,13 @@
     <!-- Hero Section -->
     <div id="home" class="hero-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
-                Your Career Has <span class="text-blue-400">No Borders</span>
+            <!-- ✅ BIG BOLD GLOBAL CONNECT TITLE -->
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
+                GLOBAL CONNECT
             </h1>
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                Your Career Has <span class="text-blue-400">No Borders</span>
+            </h2>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-10">
                 Discover thousands of international job opportunities. We connect talent with global employers, handling the complexities so you can focus on your future.
             </p>
@@ -216,19 +229,6 @@
         </div>
     </div>
 
-    <!-- Office Location Banner -->
-    <section class="bg-primary text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-2"><i class="fa-solid fa-location-dot mr-2"></i>Visit Our Office</h2>
-            <p class="text-lg mb-3">📍 Thika Road, Next to Roasters Hotel, Victory House 1st Floor, Room No. 2</p>
-            <div class="bg-white text-primary py-3 px-6 rounded-lg inline-block mt-3">
-                <i class="fa-solid fa-phone mr-2"></i>
-                <span class="text-2xl font-bold">+254 713 670 248</span>
-            </div>
-            <p class="mt-3 text-blue-100"><i class="fa-solid fa-clock mr-2"></i>Mon-Fri: 8:00 AM - 5:00 PM | Walk-ins Welcome!</p>
-        </div>
-    </section>
-
     <!-- CEO SECTION -->
     <section id="ceo" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
@@ -248,17 +248,7 @@
                     <div class="bg-blue-50 p-8 rounded-2xl mb-6">
                         <h3 class="text-3xl font-bold text-dark mb-2">Josephat Mwangi W</h3>
                         <p class="text-primary font-semibold text-lg mb-4">Founder & Chief Executive Officer</p>
-                        <div class="flex gap-4 mb-6">
-                            <a href="https://wa.me/254713670248" target="_blank" class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                            </a>
-                            <a href="https://www.facebook.com/jay.mwas.7" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
-                                <i class="fa-brands fa-facebook-f text-xl"></i>
-                            </a>
-                            <a href="mailto:princemkenya143@gmail.com?subject=Business Inquiry" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary">
-                                <i class="fa-solid fa-envelope text-xl"></i>
-                            </a>
-                        </div>
+                        <!-- ✅ Social media icons REMOVED as requested -->
                     </div>
                     
                     <div class="space-y-4">
@@ -291,7 +281,7 @@
         </div>
     </section>
 
-    <!-- Jobs Section - FULL VERSION WITH ALL 6 JOBS -->
+    <!-- Jobs Section -->
     <section id="jobs" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-end mb-12">
@@ -507,8 +497,8 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-2">
                     <div class="flex items-center gap-2 mb-4">
-                        <img src="https://i.ibb.co/KQkpN7m/logo.png" alt="Global Connect" class="h-10">
-                        <span class="font-bold text-xl">Global Connect</span>
+                        <img src="https://i.ibb.co/KQkpN7m/logo.png" alt="Global Connect" class="h-12">
+                        <span class="font-bold text-2xl">Global Connect</span>
                     </div>
                     <p class="text-sm text-gray-500 mb-4">Connecting African talent with global opportunities.</p>
                     <div class="flex gap-4">
@@ -541,7 +531,8 @@
                 </div>
             </div>
             <div class="border-t pt-8 text-center text-sm text-gray-400">
-                <p>© 2026 Josephat Mwangi W | Global Connect. All rights reserved.</p>
+                <!-- ✅ Copyright changed as requested -->
+                <p>Global Connect. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -553,10 +544,8 @@
 
     <!-- JavaScript -->
     <script>
-        // Scroll to Home Function
         function scrollToHome() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            // Close mobile menu if open
             var menu = document.getElementById('mobileMenu');
             var icon = document.getElementById('menuIcon');
             menu.classList.remove('active');
@@ -564,13 +553,11 @@
             icon.classList.add('fa-bars');
         }
 
-        // Scroll to Submit CV Function
         function scrollToSubmit() {
             var submitSection = document.getElementById('submit-cv');
             submitSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Mobile Menu Toggle
         function toggleMenu() {
             var menu = document.getElementById('mobileMenu');
             var icon = document.getElementById('menuIcon');
@@ -586,12 +573,10 @@
             }
         }
 
-        // Add click event listener to menu button
         document.getElementById('menuBtn').addEventListener('click', function() {
             toggleMenu();
         });
 
-        // Show/Hide Back to Home Button on Scroll
         window.onscroll = function() {
             var btn = document.getElementById('backToHome');
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -601,7 +586,6 @@
             }
         };
 
-        // Search Function
         function searchJobs() {
             var searchTerm = document.getElementById('jobTitle').value.toLowerCase();
             var locationFilter = document.getElementById('location').value;
@@ -644,7 +628,6 @@
             searchJobs();
         }
 
-        // Enter key search
         document.getElementById('jobTitle').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 searchJobs();
