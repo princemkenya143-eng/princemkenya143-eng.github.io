@@ -22,7 +22,7 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .hero-bg {
             background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -36,9 +36,39 @@
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-bounce { animation: bounce 2s infinite; }
         .phone-number { font-size: 1.5rem; font-weight: 700; color: #2563EB; }
+        /* Home/Back to Top Button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #2563EB;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #backToTop:hover {
+            background-color: #1E40AF;
+            transform: translateY(-3px);
+        }
+        #backToTop.show {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+
+    <!-- ✅ HOME/BACK TO TOP BUTTON -->
+    <button onclick="scrollToTop()" id="backToTop" title="Go to top">
+        <i class="fa-solid fa-house"></i>
+    </button>
 
     <!-- Navigation -->
     <nav class="bg-white shadow-sm fixed w-full z-50">
@@ -50,7 +80,11 @@
                         <span class="font-bold text-2xl text-dark">Global Connect</span>
                     </div>
                     <div class="hidden md:ml-10 md:flex md:space-x-8">
-                        <a href="#jobs" class="text-gray-900 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Find Jobs</a>
+                        <!-- ✅ HOME BUTTON ADDED -->
+                        <a href="#" onclick="scrollToTop(); return false;" class="text-gray-900 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
+                            <i class="fa-solid fa-house mr-1"></i>Home
+                        </a>
+                        <a href="#jobs" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Find Jobs</a>
                         <a href="#ceo" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About CEO</a>
                         <a href="#submit-cv" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Submit CV</a>
                         <a href="#contact" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
@@ -63,8 +97,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="hero-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <!-- Hero Section (ID for Home Button) -->
+    <div id="home" class="hero-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
                 Your Career Has <span class="text-blue-400">No Borders</span>
@@ -104,10 +138,10 @@
             <!-- Popular Searches -->
             <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm text-gray-300">
                 <span>Popular:</span>
-                <a href="#" onclick="quickSearch('Security')" class="hover:text-white underline cursor-pointer">Security Guard</a>
-                <a href="#" onclick="quickSearch('Nurse')" class="hover:text-white underline cursor-pointer">Nurse</a>
-                <a href="#" onclick="quickSearch('Cleaner')" class="hover:text-white underline cursor-pointer">Cleaner</a>
-                <a href="#" onclick="quickSearch('Kitchen')" class="hover:text-white underline cursor-pointer">Kitchen Helper</a>
+                <a href="#" onclick="quickSearch('Security'); return false;" class="hover:text-white underline cursor-pointer">Security Guard</a>
+                <a href="#" onclick="quickSearch('Nurse'); return false;" class="hover:text-white underline cursor-pointer">Nurse</a>
+                <a href="#" onclick="quickSearch('Cleaner'); return false;" class="hover:text-white underline cursor-pointer">Cleaner</a>
+                <a href="#" onclick="quickSearch('Kitchen'); return false;" class="hover:text-white underline cursor-pointer">Kitchen Helper</a>
             </div>
         </div>
     </div>
@@ -136,7 +170,7 @@
         </div>
     </section>
 
-    <!-- ✅ CEO SECTION - WITH YOUR REAL PHOTO -->
+    <!-- CEO SECTION -->
     <section id="ceo" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -147,7 +181,6 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
                     <div class="inline-block p-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl mb-6">
-                        <!-- ✅ YOUR REAL CEO PHOTO -->
                         <img src="https://i.ibb.co/SDy62k5v/ceo.jpg" 
                              alt="Josephat Mwangi W - CEO" 
                              class="rounded-xl w-72 h-72 object-cover shadow-2xl">
@@ -479,6 +512,7 @@
                 <div>
                     <h4 class="font-bold text-dark mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" onclick="scrollToTop(); return false;" class="hover:text-primary">Home</a></li>
                         <li><a href="#jobs" class="hover:text-primary">Browse Jobs</a></li>
                         <li><a href="#ceo" class="hover:text-primary">About CEO</a></li>
                         <li><a href="#submit-cv" class="hover:text-primary">Submit CV</a></li>
@@ -509,6 +543,21 @@
 
     <!-- JavaScript -->
     <script>
+        // ✅ HOME/BACK TO TOP FUNCTION
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide back to top button on scroll
+        window.onscroll = function() {
+            const btn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+        };
+
         // Working Search Functionality
         function searchJobs() {
             const searchTerm = document.getElementById('jobTitle').value.toLowerCase();
