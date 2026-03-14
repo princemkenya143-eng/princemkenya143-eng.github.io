@@ -36,36 +36,19 @@
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-bounce { animation: bounce 2s infinite; }
         .phone-number { font-size: 1.5rem; font-weight: 700; color: #2563EB; }
-        /* Home/Back to Top Button */
         #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: #2563EB;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 18px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: none; position: fixed; bottom: 20px; left: 20px; z-index: 99;
+            border: none; outline: none; background-color: #2563EB; color: white;
+            cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px;
+            transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        #backToTop:hover {
-            background-color: #1E40AF;
-            transform: translateY(-3px);
-        }
-        #backToTop.show {
-            display: block;
-        }
+        #backToTop:hover { background-color: #1E40AF; transform: translateY(-3px); }
+        #backToTop.show { display: block; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- ✅ HOME/BACK TO TOP BUTTON -->
+    <!-- Home/Back to Top Button -->
     <button onclick="scrollToTop()" id="backToTop" title="Go to top">
         <i class="fa-solid fa-house"></i>
     </button>
@@ -80,7 +63,6 @@
                         <span class="font-bold text-2xl text-dark">Global Connect</span>
                     </div>
                     <div class="hidden md:ml-10 md:flex md:space-x-8">
-                        <!-- ✅ HOME BUTTON ADDED -->
                         <a href="#" onclick="scrollToTop(); return false;" class="text-gray-900 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
                             <i class="fa-solid fa-house mr-1"></i>Home
                         </a>
@@ -97,7 +79,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section (ID for Home Button) -->
+    <!-- Hero Section -->
     <div id="home" class="hero-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
@@ -125,6 +107,8 @@
                         <option value="Qatar">Qatar</option>
                         <option value="Saudi Arabia">Saudi Arabia</option>
                         <option value="Kenya">Kenya</option>
+                        <option value="Serbia">Serbia 🇪🇺</option>
+                        <option value="Romania">Romania 🇪🇺</option>
                     </select>
                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                         <i class="fa-solid fa-chevron-down text-gray-400 text-xs"></i>
@@ -140,8 +124,8 @@
                 <span>Popular:</span>
                 <a href="#" onclick="quickSearch('Security'); return false;" class="hover:text-white underline cursor-pointer">Security Guard</a>
                 <a href="#" onclick="quickSearch('Nurse'); return false;" class="hover:text-white underline cursor-pointer">Nurse</a>
-                <a href="#" onclick="quickSearch('Cleaner'); return false;" class="hover:text-white underline cursor-pointer">Cleaner</a>
-                <a href="#" onclick="quickSearch('Kitchen'); return false;" class="hover:text-white underline cursor-pointer">Kitchen Helper</a>
+                <a href="#" onclick="quickSearch('Factory'); return false;" class="hover:text-white underline cursor-pointer">Factory Worker</a>
+                <a href="#" onclick="quickSearch('Warehouse'); return false;" class="hover:text-white underline cursor-pointer">Warehouse</a>
             </div>
         </div>
     </div>
@@ -210,7 +194,7 @@
                             At Global Connect, we believe every talented African deserves access to global opportunities. Our mission is to bridge the gap between skilled professionals and international employers.
                         </p>
                         <p class="text-gray-700 text-lg leading-relaxed">
-                            With years of experience in international recruitment, we've successfully placed hundreds of candidates in rewarding positions across the UAE, Qatar, Saudi Arabia, and beyond.
+                            With years of experience in international recruitment, we've successfully placed hundreds of candidates in rewarding positions across the UAE, Qatar, Saudi Arabia, Serbia, Romania, and beyond.
                         </p>
                         <p class="text-gray-700 text-lg leading-relaxed">
                             We handle all the complexities - from visa processing to relocation support - so you can focus on building your dream career abroad.
@@ -228,7 +212,7 @@
                             <div class="text-sm text-gray-600">Partners</div>
                         </div>
                         <div class="text-center p-4 bg-gray-50 rounded-lg">
-                            <div class="text-3xl font-bold text-primary mb-1">4</div>
+                            <div class="text-3xl font-bold text-primary mb-1">6</div>
                             <div class="text-sm text-gray-600">Countries</div>
                         </div>
                     </div>
@@ -247,7 +231,92 @@
                 </div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="allJobs">
-                <!-- Job 1 -->
+                
+                <!-- ✅ NEW: Serbia Factory Worker -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Serbia" data-title="Factory Worker">
+                    <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-industry text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Factory Worker</h3>
+                            <p class="text-gray-500 text-sm">Serbia - Manufacturing</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">$700-900/month</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Full Time</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Work Permit Assistance<br>
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Accommodation Support
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i> Serbia 🇪🇺
+                        </div>
+                        <span class="text-purple-500 text-xs font-bold">Apply Now</span>
+                    </div>
+                </div>
+
+                <!-- ✅ NEW: Serbia Warehouse Worker -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Serbia" data-title="Warehouse Worker">
+                    <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-warehouse text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Warehouse Worker</h3>
+                            <p class="text-gray-500 text-sm">Serbia - Logistics</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">$700-900/month</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Full Time</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Work Permit Assistance<br>
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Transportation Provided
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i> Serbia 🇪🇺
+                        </div>
+                        <span class="text-purple-500 text-xs font-bold">Apply Now</span>
+                    </div>
+                </div>
+
+                <!-- ✅ NEW: Romania Factory Worker -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Romania" data-title="Factory Worker">
+                    <div class="absolute top-0 right-0 bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-industry text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Factory Worker</h3>
+                            <p class="text-gray-500 text-sm">Romania - Manufacturing</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">€1,000/month</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Full Time</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> EU Work Permit<br>
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Accommodation + Meals
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i> Romania 🇪🇺
+                        </div>
+                        <span class="text-indigo-500 text-xs font-bold">Apply Now</span>
+                    </div>
+                </div>
+
+                <!-- Existing Gulf Jobs (Updated with data attributes) -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="UAE" data-title="Security Guard">
                     <div class="absolute top-0 right-0 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-bl-lg">URGENT</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -274,7 +343,6 @@
                     </div>
                 </div>
 
-                <!-- Job 2 -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Nurse">
                     <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Visa Sponsorship</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -301,7 +369,6 @@
                     </div>
                 </div>
 
-                <!-- Job 3 -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Kitchen Helper">
                     <div class="absolute top-0 right-0 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Qatar Airways</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -328,86 +395,6 @@
                     </div>
                 </div>
 
-                <!-- Job 4 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Kenya" data-title="Multiple">
-                    <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">900+ Positions</div>
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-briefcase text-2xl text-gray-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Multiple Positions</h3>
-                            <p class="text-gray-500 text-sm">Amarok Adventures - Nairobi/Mombasa</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">1000 AED + OT</span>
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Male & Female</span>
-                    </div>
-                    <div class="text-sm text-gray-600 mb-3">
-                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Security, Cleaners, Helpers
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <i class="fa-solid fa-location-dot mr-1"></i> Kenya
-                        </div>
-                        <span class="text-purple-500 text-xs font-bold">Register Now</span>
-                    </div>
-                </div>
-
-                <!-- Job 5 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Cleaner">
-                    <div class="absolute top-0 right-0 bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-bl-lg">NO INTERVIEW</div>
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-broom text-2xl text-gray-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">Female School Cleaner</h3>
-                            <p class="text-gray-500 text-sm">Qatar - Direct Selection</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">1,600 QAR Total</span>
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Direct Hire</span>
-                    </div>
-                    <div class="text-sm text-gray-600 mb-3">
-                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Accommodation + Transport + Food
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <i class="fa-solid fa-location-dot mr-1"></i> Qatar
-                        </div>
-                        <span class="text-yellow-600 text-xs font-bold">Apply Today</span>
-                    </div>
-                </div>
-
-                <!-- Job 6 -->
-                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="UAE" data-title="Helper">
-                    <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Visa Sponsorship</div>
-                    <div class="flex items-start gap-4 mb-4">
-                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-hands-helping text-2xl text-gray-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg text-dark group-hover:text-primary transition-colors">General Helper</h3>
-                            <p class="text-gray-500 text-sm">Gulf Countries - Various Roles</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">800-1200 USD</span>
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Entry Level</span>
-                    </div>
-                    <div class="text-sm text-gray-600 mb-3">
-                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Full Package Provided
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <i class="fa-solid fa-location-dot mr-1"></i> UAE/Qatar/Saudi
-                        </div>
-                        <span class="text-gray-400 text-xs">Open</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -498,7 +485,7 @@
                         <i class="fa-solid fa-globe text-primary text-2xl"></i>
                         <span class="font-bold text-xl text-dark">Global Connect</span>
                     </div>
-                    <p class="text-gray-500 text-sm mb-6 max-w-xs">Connecting African talent with international opportunities.</p>
+                    <p class="text-gray-500 text-sm mb-6 max-w-xs">Connecting African talent with international opportunities in Gulf & Europe.</p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/jay.mwas.7" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
                             <i class="fa-brands fa-facebook-f"></i>
@@ -517,6 +504,16 @@
                         <li><a href="#ceo" class="hover:text-primary">About CEO</a></li>
                         <li><a href="#submit-cv" class="hover:text-primary">Submit CV</a></li>
                         <li><a href="#contact" class="hover:text-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark mb-4">Destinations</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" onclick="quickSearch('UAE'); return false;" class="hover:text-primary">🇦🇪 UAE Jobs</a></li>
+                        <li><a href="#" onclick="quickSearch('Qatar'); return false;" class="hover:text-primary">🇶🇦 Qatar Jobs</a></li>
+                        <li><a href="#" onclick="quickSearch('Serbia'); return false;" class="hover:text-primary">🇷🇸 Serbia Jobs 🇪🇺</a></li>
+                        <li><a href="#" onclick="quickSearch('Romania'); return false;" class="hover:text-primary">🇷🇴 Romania Jobs 🇪🇺</a></li>
                     </ul>
                 </div>
 
@@ -543,12 +540,9 @@
 
     <!-- JavaScript -->
     <script>
-        // ✅ HOME/BACK TO TOP FUNCTION
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Show/hide back to top button on scroll
         window.onscroll = function() {
             const btn = document.getElementById("backToTop");
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -558,7 +552,6 @@
             }
         };
 
-        // Working Search Functionality
         function searchJobs() {
             const searchTerm = document.getElementById('jobTitle').value.toLowerCase();
             const locationFilter = document.getElementById('location').value;
