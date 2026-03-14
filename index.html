@@ -44,6 +44,13 @@
         }
         #backToTop:hover { background-color: #1E40AF; transform: translateY(-3px); }
         #backToTop.show { display: block; }
+        /* Mobile Menu */
+        #mobileMenu {
+            display: none;
+        }
+        #mobileMenu.show {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -62,19 +69,43 @@
                         <i class="fa-solid fa-globe text-primary text-3xl"></i>
                         <span class="font-bold text-2xl text-dark">Global Connect</span>
                     </div>
-                    <div class="hidden md:ml-10 md:flex md:space-x-8">
-                        <a href="#" onclick="scrollToTop(); return false;" class="text-gray-900 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                            <i class="fa-solid fa-house mr-1"></i>Home
-                        </a>
-                        <a href="#jobs" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Find Jobs</a>
-                        <a href="#ceo" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About CEO</a>
-                        <a href="#submit-cv" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Submit CV</a>
-                        <a href="#contact" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
                 </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex md:items-center md:ml-10 md:space-x-8">
+                    <a href="#" onclick="scrollToTop(); return false;" class="text-gray-900 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
+                        <i class="fa-solid fa-house mr-1"></i>Home
+                    </a>
+                    <a href="#jobs" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Find Jobs</a>
+                    <a href="#ceo" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About CEO</a>
+                    <a href="#submit-cv" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Submit CV</a>
+                    <a href="#contact" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                </div>
+
                 <div class="flex items-center gap-4">
-                    <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I%20want%20to%20sign%20up%20for%20job%20opportunities" target="_blank" class="bg-primary hover:bg-secondary text-white px-5 py-2.5 rounded-full font-medium transition duration-300 shadow-lg shadow-blue-500/30">Sign Up</a>
+                    <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I%20want%20to%20sign%20up%20for%20job%20opportunities" target="_blank" class="hidden md:inline-block bg-primary hover:bg-secondary text-white px-5 py-2.5 rounded-full font-medium transition duration-300 shadow-lg shadow-blue-500/30">Sign Up</a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#" onclick="scrollToTop(); toggleMobileMenu(); return false;" class="block text-gray-900 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">
+                    <i class="fa-solid fa-house mr-2"></i>Home
+                </a>
+                <a href="#jobs" onclick="toggleMobileMenu()" class="block text-gray-500 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Find Jobs</a>
+                <a href="#ceo" onclick="toggleMobileMenu()" class="block text-gray-500 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">About CEO</a>
+                <a href="#submit-cv" onclick="toggleMobileMenu()" class="block text-gray-500 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Submit CV</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block text-gray-500 hover:text-primary hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I%20want%20to%20sign%20up%20for%20job%20opportunities" target="_blank" class="block bg-primary hover:bg-secondary text-white text-center px-3 py-3 rounded-full font-medium transition duration-300 mt-4">
+                    <i class="fa-solid fa-user-plus mr-2"></i>Sign Up
+                </a>
             </div>
         </div>
     </nav>
@@ -232,7 +263,7 @@
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="allJobs">
                 
-                <!-- ✅ NEW: Serbia Factory Worker -->
+                <!-- Serbia Factory Worker -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Serbia" data-title="Factory Worker">
                     <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -260,7 +291,7 @@
                     </div>
                 </div>
 
-                <!-- ✅ NEW: Serbia Warehouse Worker -->
+                <!-- Serbia Warehouse Worker -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Serbia" data-title="Warehouse Worker">
                     <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -288,7 +319,7 @@
                     </div>
                 </div>
 
-                <!-- ✅ NEW: Romania Factory Worker -->
+                <!-- Romania Factory Worker -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Romania" data-title="Factory Worker">
                     <div class="absolute top-0 right-0 bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -316,7 +347,7 @@
                     </div>
                 </div>
 
-                <!-- Existing Gulf Jobs (Updated with data attributes) -->
+                <!-- UAE Security Guard -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="UAE" data-title="Security Guard">
                     <div class="absolute top-0 right-0 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-bl-lg">URGENT</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -343,6 +374,7 @@
                     </div>
                 </div>
 
+                <!-- Qatar Nurse -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Nurse">
                     <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Visa Sponsorship</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -369,6 +401,7 @@
                     </div>
                 </div>
 
+                <!-- Qatar Kitchen Helper -->
                 <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden group" data-location="Qatar" data-title="Kitchen Helper">
                     <div class="absolute top-0 right-0 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Qatar Airways</div>
                     <div class="flex items-start gap-4 mb-4">
@@ -540,76 +573,17 @@
 
     <!-- JavaScript -->
     <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        window.onscroll = function() {
-            const btn = document.getElementById("backToTop");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btn.classList.add("show");
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            mobileMenu.classList.toggle('show');
+            
+            // Change icon between hamburger and X
+            if (mobileMenu.classList.contains('show')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
             } else {
-                btn.classList.remove("show");
-            }
-        };
-
-        function searchJobs() {
-            const searchTerm = document.getElementById('jobTitle').value.toLowerCase();
-            const locationFilter = document.getElementById('location').value;
-            const allJobs = document.querySelectorAll('#allJobs .job-card');
-            const searchResults = document.getElementById('searchResults');
-            const resultsCount = document.getElementById('resultsCount');
-            const jobsContainer = document.getElementById('jobsContainer');
-            
-            let visibleCount = 0;
-            jobsContainer.innerHTML = '';
-            
-            allJobs.forEach(job => {
-                const jobTitle = job.getAttribute('data-title').toLowerCase();
-                const jobLocation = job.getAttribute('data-location');
-                
-                const matchesSearch = jobTitle.includes(searchTerm) || 
-                                    job.querySelector('h3').textContent.toLowerCase().includes(searchTerm);
-                const matchesLocation = locationFilter === '' || jobLocation === locationFilter;
-                
-                if (matchesSearch && matchesLocation) {
-                    const clone = job.cloneNode(true);
-                    clone.classList.remove('hidden-job');
-                    jobsContainer.appendChild(clone);
-                    visibleCount++;
-                }
-            });
-            
-            resultsCount.textContent = `Found ${visibleCount} job${visibleCount !== 1 ? 's' : ''}`;
-            
-            if (visibleCount > 0) {
-                searchResults.classList.add('active');
-                searchResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                jobsContainer.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <i class="fa-solid fa-inbox text-gray-300 text-6xl mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-600">No jobs found</h3>
-                        <p class="text-gray-500 mt-2">Try adjusting your search criteria or contact us directly</p>
-                        <a href="https://wa.me/254713670248" target="_blank" class="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
-                            <i class="fa-brands fa-whatsapp mr-2"></i>Chat on WhatsApp
-                        </a>
-                    </div>
-                `;
-                searchResults.classList.add('active');
-                searchResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-        
-        function quickSearch(keyword) {
-            document.getElementById('jobTitle').value = keyword;
-            searchJobs();
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('jobTitle').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') searchJobs();
-            });
-        });
-    </script>
-</body>
-</html>
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars
