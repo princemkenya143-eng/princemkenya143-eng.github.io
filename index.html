@@ -37,8 +37,14 @@
         .phone-number { font-size: 1.5rem; font-weight: 700; color: #2563EB; }
         
         /* Mobile Menu */
-        #mobileMenu { display: none; background-color: white; border-top: 1px solid #e5e7eb; }
-        #mobileMenu.active { display: block; }
+        #mobileMenu {
+            display: none;
+            background-color: white;
+            border-top: 1px solid #e5e7eb;
+        }
+        #mobileMenu.active {
+            display: block;
+        }
         .menu-link {
             display: block;
             padding: 12px 16px;
@@ -47,7 +53,10 @@
             border-radius: 6px;
             margin: 4px 0;
         }
-        .menu-link:hover { background-color: #f3f4f6; color: #2563EB; }
+        .menu-link:hover {
+            background-color: #f3f4f6;
+            color: #2563EB;
+        }
         
         /* Back to Home Button */
         #backToHome {
@@ -66,11 +75,20 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: all 0.3s;
         }
-        #backToHome:hover { background-color: #1E40AF; transform: translateY(-3px); }
-        #backToHome.show { display: flex; align-items: center; justify-content: center; }
+        #backToHome:hover {
+            background-color: #1E40AF;
+            transform: translateY(-3px);
+        }
+        #backToHome.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
         /* WhatsApp Button */
-        .whatsapp-float { z-index: 99; }
+        .whatsapp-float {
+            z-index: 99;
+        }
         
         /* Logo Styling */
         .logo-container {
@@ -80,8 +98,13 @@
             cursor: pointer;
             transition: transform 0.2s;
         }
-        .logo-container:hover { transform: scale(1.05); }
-        .logo-img { height: 50px; width: auto; }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -95,7 +118,7 @@
     <nav class="bg-white shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- ✅ Logo - Clickable to Home -->
+                <!-- Logo - Clickable to Home -->
                 <a href="#home" onclick="scrollToHome(); return false;" class="logo-container">
                     <img src="https://i.ibb.co/KQkpN7m/logo.png" alt="Global Connect Logo" class="logo-img">
                 </a>
@@ -182,8 +205,346 @@
         </div>
     </div>
 
-    <!-- Rest of your existing sections (Search Results, Office Banner, CEO, Jobs, Submit CV, Contact, Footer) remain the same... -->
-    <!-- Just copy them from the previous complete code I gave you -->
+    <!-- Search Results Section -->
+    <div id="searchResults" class="search-results bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">Search Results</h2>
+                <p id="resultsCount" class="text-gray-500">Found 0 jobs</p>
+            </div>
+            <div id="jobsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </div>
+
+    <!-- Office Location Banner -->
+    <section class="bg-primary text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-2"><i class="fa-solid fa-location-dot mr-2"></i>Visit Our Office</h2>
+            <p class="text-lg mb-3">📍 Thika Road, Next to Roasters Hotel, Victory House 1st Floor, Room No. 2</p>
+            <div class="bg-white text-primary py-3 px-6 rounded-lg inline-block mt-3">
+                <i class="fa-solid fa-phone mr-2"></i>
+                <span class="text-2xl font-bold">+254 713 670 248</span>
+            </div>
+            <p class="mt-3 text-blue-100"><i class="fa-solid fa-clock mr-2"></i>Mon-Fri: 8:00 AM - 5:00 PM | Walk-ins Welcome!</p>
+        </div>
+    </section>
+
+    <!-- CEO SECTION -->
+    <section id="ceo" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-dark mb-4">Meet Our Founder & CEO</h2>
+                <p class="text-gray-600 text-lg">Leadership dedicated to connecting African talent with global opportunities</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center">
+                    <div class="inline-block p-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl mb-6">
+                        <img src="https://i.ibb.co/SDy62k5v/ceo.jpg" alt="Josephat Mwangi W - CEO" class="rounded-xl w-72 h-72 object-cover shadow-2xl">
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-blue-50 p-8 rounded-2xl mb-6">
+                        <h3 class="text-3xl font-bold text-dark mb-2">Josephat Mwangi W</h3>
+                        <p class="text-primary font-semibold text-lg mb-4">Founder & Chief Executive Officer</p>
+                        <div class="flex gap-4 mb-6">
+                            <a href="https://wa.me/254713670248" target="_blank" class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="https://www.facebook.com/jay.mwas.7" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
+                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="mailto:princemkenya143@gmail.com?subject=Business Inquiry" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <p class="text-gray-700 text-lg">
+                            <i class="fa-solid fa-quote-left text-primary text-2xl mr-2"></i>
+                            At Global Connect, we believe every talented African deserves access to global opportunities.
+                        </p>
+                        <p class="text-gray-700 text-lg">
+                            With years of experience in international recruitment, we've successfully placed hundreds of candidates across the UAE, Qatar, Saudi Arabia, Serbia, Romania, and beyond.
+                            <i class="fa-solid fa-quote-right text-primary text-2xl ml-2"></i>
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold text-primary mb-1">500+</div>
+                            <div class="text-sm text-gray-600">Placements</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold text-primary mb-1">50+</div>
+                            <div class="text-sm text-gray-600">Partners</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold text-primary mb-1">6</div>
+                            <div class="text-sm text-gray-600">Countries</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section - FULL VERSION WITH ALL 6 JOBS -->
+    <section id="jobs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-dark mb-2">Current Opportunities</h2>
+                    <p class="text-gray-500">Urgent hiring with visa sponsorship available.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="allJobs">
+                
+                <!-- Job 1: Serbia Factory Worker -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 relative" data-location="Serbia" data-title="Factory Worker">
+                    <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-industry text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Factory Worker</h3>
+                            <p class="text-gray-500 text-sm">Serbia - Manufacturing</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">$700-900/month</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Work Permit + Accommodation
+                    </div>
+                    <div class="flex justify-between pt-4 border-t">
+                        <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Serbia 🇪🇺</span>
+                        <a href="#submit-cv" onclick="scrollToSubmit()" class="text-purple-500 text-xs font-bold hover:text-purple-700">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Job 2: Serbia Warehouse Worker -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 relative" data-location="Serbia" data-title="Warehouse Worker">
+                    <div class="absolute top-0 right-0 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-warehouse text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Warehouse Worker</h3>
+                            <p class="text-gray-500 text-sm">Serbia - Logistics</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">$700-900/month</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Work Permit + Transport
+                    </div>
+                    <div class="flex justify-between pt-4 border-t">
+                        <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Serbia 🇪🇺</span>
+                        <a href="#submit-cv" onclick="scrollToSubmit()" class="text-purple-500 text-xs font-bold hover:text-purple-700">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Job 3: Romania Factory Worker -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 relative" data-location="Romania" data-title="Factory Worker">
+                    <div class="absolute top-0 right-0 bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-bl-lg">🇪🇺 EU</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-industry text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Factory Worker</h3>
+                            <p class="text-gray-500 text-sm">Romania - Manufacturing</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">€1,000/month</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> EU Permit + Meals
+                    </div>
+                    <div class="flex justify-between pt-4 border-t">
+                        <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Romania 🇪🇺</span>
+                        <a href="#submit-cv" onclick="scrollToSubmit()" class="text-indigo-500 text-xs font-bold hover:text-indigo-700">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Job 4: UAE Security Guard -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 relative" data-location="UAE" data-title="Security Guard">
+                    <div class="absolute top-0 right-0 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-bl-lg">URGENT</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-user-shield text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Security Guard</h3>
+                            <p class="text-gray-500 text-sm">UAE - Both Genders</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">2000 AED/month</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Visa + Medical + Accommodation
+                    </div>
+                    <div class="flex justify-between pt-4 border-t">
+                        <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> UAE</span>
+                        <a href="#submit-cv" onclick="scrollToSubmit()" class="text-red-500 text-xs font-bold hover:text-red-700">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Job 5: Qatar Nurse -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 relative" data-location="Qatar" data-title="Nurse">
+                    <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Visa</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-user-nurse text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Registered Nurse</h3>
+                            <p class="text-gray-500 text-sm">Qatar - Female</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">4,500-6,000 QAR</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Accommodation + Insurance
+                    </div>
+                    <div class="flex justify-between pt-4 border-t">
+                        <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Qatar</span>
+                        <a href="#submit-cv" onclick="scrollToSubmit()" class="text-gray-500 text-xs font-bold hover:text-gray-700">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Job 6: Qatar Kitchen Helper -->
+                <div class="job-card bg-white border border-gray-100 rounded-2xl p-6 relative" data-location="Qatar" data-title="Kitchen Helper">
+                    <div class="absolute top-0 right-0 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Qatar Airways</div>
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-kitchen-set text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Kitchen Helper</h3>
+                            <p class="text-gray-500 text-sm">Qatar Airways</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">1300 Riyal</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Food + Flight + Accommodation
+                    </div>
+                    <div class="flex justify-between pt-4 border-t">
+                        <span class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Qatar</span>
+                        <a href="#submit-cv" onclick="scrollToSubmit()" class="text-blue-500 text-xs font-bold hover:text-blue-700">Apply Now →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit CV Section -->
+    <section id="submit-cv" class="py-20 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-4">Submit Your CV</h2>
+            <p class="text-gray-600 mb-8">Send your CV directly to our recruitment team. Click the button below to open your email app.</p>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-envelope text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Send Your Application</h3>
+                <p class="text-gray-600 mb-6">Click the button below to compose an email with your CV attached</p>
+                
+                <a href="mailto:princemkenya143@gmail.com?subject=Job Application&body=Dear Global Connect Team,%0D%0A%0D%0AI am interested in applying for a position. Please find my details below:%0D%0A%0D%0AName:%0D%0APhone:%0D%0APosition Applied For:%0D%0A%0D%0AI have attached my CV for your review.%0D%0A%0D%0AThank you,%0D%0A" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition text-lg shadow-lg">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>Send CV via Email
+                </a>
+                
+                <p class="text-sm text-gray-500 mt-4">
+                    <i class="fa-solid fa-info-circle mr-1"></i>Your email app will open automatically
+                </p>
+                
+                <div class="border-t pt-6 mt-6">
+                    <p class="mb-4 font-bold">Or apply via WhatsApp:</p>
+                    <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I%20would%20like%20to%20submit%20my%20CV%20for%20job%20opportunities" target="_blank" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full">
+                        <i class="fa-brands fa-whatsapp mr-2"></i>Send via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white border-t">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-8 rounded-xl text-center">
+                    <i class="fa-solid fa-phone text-5xl text-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-4">Call/WhatsApp</h3>
+                    <a href="tel:+254713670248" class="block text-2xl font-bold text-primary mb-2">+254 713 670 248</a>
+                    <p class="text-sm text-gray-600">Mon-Sat: 8AM-5PM</p>
+                </div>
+                <div class="bg-green-50 p-8 rounded-xl text-center">
+                    <i class="fa-solid fa-location-dot text-5xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-xl mb-4">Visit Office</h3>
+                    <p class="text-gray-700">Thika Road, Next to Roasters Hotel<br>Victory House 1st Floor, Room 2<br>Nairobi, Kenya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="https://i.ibb.co/KQkpN7m/logo.png" alt="Global Connect" class="h-10">
+                        <span class="font-bold text-xl">Global Connect</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-4">Connecting African talent with global opportunities.</p>
+                    <div class="flex gap-4">
+                        <a href="https://facebook.com/jay.mwas.7" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/254713670248" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-green-500 hover:text-white">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:princemkenya143@gmail.com?subject=Inquiry" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" onclick="scrollToHome()" class="hover:text-primary">Home</a></li>
+                        <li><a href="#jobs" class="hover:text-primary">Jobs</a></li>
+                        <li><a href="#ceo" class="hover:text-primary">About CEO</a></li>
+                        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="tel:+254713670248" class="hover:text-primary font-bold">+254 713 670 248</a></li>
+                        <li><a href="#submit-cv" class="hover:text-primary"><i class="fa-solid fa-envelope mr-1"></i>Send Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 Josephat Mwangi W | Global Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/254713670248?text=Hi%20Global%20Connect,%20I'm%20interested%20in%20job%20opportunities" target="_blank" class="whatsapp-float fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50 animate-bounce">
@@ -192,8 +553,10 @@
 
     <!-- JavaScript -->
     <script>
+        // Scroll to Home Function
         function scrollToHome() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Close mobile menu if open
             var menu = document.getElementById('mobileMenu');
             var icon = document.getElementById('menuIcon');
             menu.classList.remove('active');
@@ -201,11 +564,13 @@
             icon.classList.add('fa-bars');
         }
 
+        // Scroll to Submit CV Function
         function scrollToSubmit() {
             var submitSection = document.getElementById('submit-cv');
             submitSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
+        // Mobile Menu Toggle
         function toggleMenu() {
             var menu = document.getElementById('mobileMenu');
             var icon = document.getElementById('menuIcon');
@@ -221,10 +586,12 @@
             }
         }
 
+        // Add click event listener to menu button
         document.getElementById('menuBtn').addEventListener('click', function() {
             toggleMenu();
         });
 
+        // Show/Hide Back to Home Button on Scroll
         window.onscroll = function() {
             var btn = document.getElementById('backToHome');
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -234,6 +601,7 @@
             }
         };
 
+        // Search Function
         function searchJobs() {
             var searchTerm = document.getElementById('jobTitle').value.toLowerCase();
             var locationFilter = document.getElementById('location').value;
@@ -276,6 +644,7 @@
             searchJobs();
         }
 
+        // Enter key search
         document.getElementById('jobTitle').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 searchJobs();
